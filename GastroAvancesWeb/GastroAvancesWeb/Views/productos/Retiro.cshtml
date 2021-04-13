@@ -1,0 +1,38 @@
+﻿@model GastroAvancesWeb.Models.producto
+@{
+    ViewData["Title"] = "Retiro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Retiro</h1>
+<h4>producto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Retiro">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id_producto" />
+            <input type="hidden" asp-for="nombre" class="form-control" />
+            <input type="hidden" asp-for="precio_unitario" class="form-control" />
+            <div class="form-group">
+                <input type="hidden" asp-for="cantidad" class="form-control" />
+                
+                <label class="control-label">Cantidad</label>
+
+                <input asp-for="retirado" class="form-control" />
+                <span asp-validation-for="retiro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Retirar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

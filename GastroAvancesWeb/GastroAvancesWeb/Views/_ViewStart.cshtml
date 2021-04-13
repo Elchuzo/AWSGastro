@@ -1,0 +1,10 @@
+﻿@{
+    if (this.User.IsInRole("Administrator"))
+    {
+        Layout = "~/Views/Shared/_Layout_admin.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}

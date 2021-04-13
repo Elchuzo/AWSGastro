@@ -1,0 +1,25 @@
+﻿using Microsoft.AspNetCore.Identity;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
+
+namespace GastroAvancesWeb.Models
+{
+    public partial class usuario : IdentityUser<int>
+    {
+        [Key]
+        [NotMapped]
+        public int id_usuario { get; set; }
+        [NotMapped]
+        public string nombre { get; set; }
+        [NotMapped]
+        public string contraseña { get; set; }
+        [NotMapped]
+        public int? rol { get; set; }
+    }
+}

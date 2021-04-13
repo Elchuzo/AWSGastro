@@ -1,0 +1,58 @@
+﻿@model IEnumerable<GastroAvancesWeb.Models.retiro>
+
+@{
+    ViewData["Title"] = "Retiros";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+<h1>Retiros</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cantidad_inicial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cantidad_retirada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cantidad_final)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_productoNavigation.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_usuario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidad_inicial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidad_retirada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidad_final)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_productoNavigation.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_usuario)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

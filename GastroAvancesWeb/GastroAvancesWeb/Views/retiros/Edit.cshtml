@@ -1,0 +1,60 @@
+﻿@model GastroAvancesWeb.Models.retiro
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>retiro</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id_retiro" />
+            <div class="form-group">
+                <label asp-for="id_usuario" class="control-label"></label>
+                <select asp-for="id_usuario" class="form-control" asp-items="ViewBag.id_usuario"></select>
+                <span asp-validation-for="id_usuario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="id_producto" class="control-label"></label>
+                <select asp-for="id_producto" class="form-control" asp-items="ViewBag.id_producto"></select>
+                <span asp-validation-for="id_producto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fecha" class="control-label"></label>
+                <input asp-for="fecha" class="form-control" />
+                <span asp-validation-for="fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cantidad_inicial" class="control-label"></label>
+                <input asp-for="cantidad_inicial" class="form-control" />
+                <span asp-validation-for="cantidad_inicial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cantidad_retirada" class="control-label"></label>
+                <input asp-for="cantidad_retirada" class="form-control" />
+                <span asp-validation-for="cantidad_retirada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cantidad_final" class="control-label"></label>
+                <input asp-for="cantidad_final" class="form-control" />
+                <span asp-validation-for="cantidad_final" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
